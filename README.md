@@ -4,7 +4,7 @@
 ## Automated ELK Stack Deployment
 
 Table of Contents
-
+[TOC]
 [ Decription fo the Topology ] (#desc)
 [ Access Policies ] (#access)
 [ Elk Configuration ] (#elkconfig)
@@ -14,7 +14,7 @@ Table of Contents
 [ Using the Playbook for Metricbeat ] (#usepbmb)
 [ Verifying Metricbeat Installation and Playbook ] (#mbver)
 [ Things to Keep in Mind ] (#ttkim)
-[ Resources ] (#resources)
+[ Additional Resources ] (#addresources)
 
 The files in this repository were used to configure the network depicted below.
 
