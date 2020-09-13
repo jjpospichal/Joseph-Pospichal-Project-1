@@ -304,7 +304,7 @@ PLAY RECAP *********************************************************************
 ### Verifying Filebeat Installation and Playbook 
 
 1) Make sure that the ELK server container is up and running.
-- On the workstation, navigate to http://52.49.189.192:5601/app/kibana/home. 
+- On the workstation, navigate to http://52.249.189.192:5601/app/kibana/home. 
 
 - Note that if you do not see the ELK server landing page, open a terminal on your computer and SSH into the ELK server.
 
@@ -463,7 +463,7 @@ PLAY RECAP *********************************************************************
 ### Verifying Metricbeat Installation and Playbook 
 
 1) Make sure that the ELK server container is up and running.
-- On the workstation, navigate to http://52.49.189.192:5601/app/kibana/home. 
+- On the workstation, navigate to http://52.249.189.192:5601/app/kibana/home. 
 
 - Note that if you do not see the ELK server landing page, open a terminal on your computer and SSH into the ELK server.
 
@@ -504,7 +504,7 @@ PLAY RECAP *********************************************************************
 
 - The `hosts` file is where the IPs of the `webservers` (where Filebeat and Metricbeat will be installed) and `elkservers` (where ELK will be installed) are defined.
 
-- To check that the ELK server is running, navigate to http://52.49.189.192:5601/app/kibana/home
+- To check that the ELK server is running, navigate to http://52.249.189.192:5601/app/kibana/home
     - Click on **Add Metric Data**.
     - Choose **Docker Metrics**.
     - Click on the **DEB** tab under **Getting Started** to view the correct Linux Metricbeat installation instructions.
