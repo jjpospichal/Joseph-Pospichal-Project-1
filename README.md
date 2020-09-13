@@ -456,23 +456,23 @@ PLAY RECAP *********************************************************************
   1) Make sure that the ELK server container is up and running.
    - On the workstation, navigate to http://52.249.189.192:5601/app/kibana/home. 
 
-    - Note that if you do not see the ELK server landing page, open a terminal on your computer and SSH into the ELK server.
+   - Note that if you do not see the ELK server landing page, open a terminal on your computer and SSH into the ELK server.
 
-    - Run `docker container list -a` to verify that the container is on.
+   - Run `docker container list -a` to verify that the container is on.
 
-    - If it is not, run `docker start elk`.
+   - If it is not, run `docker start elk`.
 
   2) Verify that the Metricbeat playbook is completing the section `Using the Playbook for Metricbeat`.
 
   3) Open the ELK server homepage.
-    - Click on **Add Metric Data**.
-    - Choose **Docker Metrics**.
-    - Click on the **DEB** tab under **Getting Started** to view the correct Linux Metricbeat installation instructions.
-    - Scroll to **Module Status** and click **Check Data**.
+   - Click on **Add Metric Data**.
+   - Choose **Docker Metrics**.
+   - Click on the **DEB** tab under **Getting Started** to view the correct Linux Metricbeat installation instructions.
+   - Scroll to **Module Status** and click **Check Data**.
 
-    - If the ELK stack was successfully receiving logs, you would see: 
+  - If the ELK stack was successfully receiving logs, you would see: 
 
-    - [Metricbeat_receiving.png](Images/Metricbeat_receiving.png)
+   - [Metricbeat_receiving.png](Images/Metricbeat_receiving.png)
 
 
 ### Things to Keep in Mind
