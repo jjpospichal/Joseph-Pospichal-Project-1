@@ -4,6 +4,7 @@
 ## Automated ELK Stack Deployment
 
 Table of Contents
+
 [TOC]
 [ Decription fo the Topology ] (#desc)
 [ Access Policies ] (#access)
@@ -34,7 +35,7 @@ This document contains the following details:
   - Machines Being Monitored
 - How to Use the Ansible Build
 
-<a-name="desc"></a>
+<a name="desc"></a>
 ### Description of the Topology
 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, also known as the D*mn Vulnerable Web Application.
@@ -62,7 +63,7 @@ The configuration details of each machine may be found below:
 | Web-3                | DVWA     | 10.1.0.10  | Linux (Ubuntu 18.04) |
 | ELK-VM               | ELK      | 10.0.2.4   | Linux (Ubuntu 18.04) |
 
-<a-name="access"></a>
+<a name="access"></a>
 ### Access Policies
 
 The machines on the internal network are not exposed to the public Internet. 
@@ -72,7 +73,6 @@ Only the Jump-Box-Provsioner machine can accept connections from the Internet. A
   Local IP (and the internal 10.1.0.4)
 
 Machines within the network can only be accessed by 10.1.0.4 (Jump-Box-Provisioner)
-_
 
 A summary of the access policies in place can be found in the table below.
 
@@ -85,7 +85,7 @@ A summary of the access policies in place can be found in the table below.
 | Web-3                | No                  | 10.1.0.4             |
 | ELK-VM               | Yes                 | Local IP             |
 
-<a-name="elkconfig"></a>
+<a name="elkconfig"></a>
 ### Elk Configuration
 
 Ansible automates the configuration of the ELK machine. No configuration was performed manually, which is advantageous because the configuration management is automated in Ansible.   Time consuming, repetive tasks are accomplished using standardized playbooks.
@@ -126,7 +126,7 @@ To run the ELK configuration:
 
   1) From a terminal ssh to the Jump-Box-Provisioner
   2) Start the Ansible container
-    - `sudo docker start [container name]`
+   - `sudo docker start [container name]`
   3) Attach to the Ansible container
     - `sudo docker attach [container name]`
   4) Change directories to: /etc/ansible
@@ -145,7 +145,7 @@ The following screenshot displays the result of running `docker ps` after succes
   - [docker_ps_output.png](Images/docker_ps_output.png)
 
 
-<a-name="targetmch"></a>
+<a name="targetmch"></a>
 ### Target Machines & Beats
 This ELK server is configured to monitor the following virtual machines:
 
@@ -164,7 +164,7 @@ These Beats allow us to collect the following information from each machine:
 
   - Metricbeat: Like Filebeat, Metricbeat utilizes Elasticsearch, Logstash and Kilbana. Metricbeat captures Docker metrics, which would show the status and health of the Docker containers.  Metrics include: Docker containers, Number of Containers (and status: Running, Paused, Stopped), CPU usage, Memory usage and Network IO.
 
-<a-name="usepbfb"></a>
+<a name="usepbfb"></a>
 ### Using the Playbook for Filebeat
 
 These tasks are performed on the VMs that are specified within the Filebeat configuration file located within Ansible at /etc/ansible/files/filebeat-configuration.yml
@@ -177,7 +177,7 @@ Follow these steps to install Filebeat:
 
   1) From a terminal ssh to the Jump-Box-Provisioner
   2) Start the Ansible container
-    - `sudo docker start [container name]`
+   - `sudo docker start [container name]`
   3) Attach to the Ansible container
     - `sudo docker attach [container name]`
   4) Change directories to: /etc/ansible
@@ -302,11 +302,11 @@ PLAY RECAP *********************************************************************
 10.1.0.10                   : ok=7    changed=5    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 ```
 
-<a-name="fbver"></a>
+<a name="fbver"></a>
 ### Verifying Filebeat Installation and Playbook 
 
   1) Make sure that the ELK server container is up and running.
-    - On the workstation, navigate to http://52.249.189.192:5601/app/kibana/home. 
+   - On the workstation, navigate to http://52.249.189.192:5601/app/kibana/home. 
 
     - Note that if you do not see the ELK server landing page, open a terminal on your computer and SSH into the ELK server.
 
@@ -327,7 +327,7 @@ PLAY RECAP *********************************************************************
     - [Filebeat_receiving.png](Images/Filebeat_receiving.png)
 
 
-<a-name="usepbfb"></a>
+<a name="usepbfb"></a>
 ### Using the Playbook for Metricbeat
 
 These tasks are performed on the ELK server that is specified within the Metricbeat configuration file located within Ansible at /etc/ansible/files/metricbeat.yml
@@ -340,7 +340,7 @@ Follow these steps to install Metricbeat:
 
   1) From a terminal ssh to the Jump-Box-Provisioner
   2) Start the Ansible container
-    - `sudo docker start [container name]`
+   - `sudo docker start [container name]`
   3) Attach to the Ansible container
     - `sudo docker attach [container name]`
   4) Change directories to: /etc/ansible
@@ -387,7 +387,7 @@ host: "10.2.0.4:5601"
   14) Create the `metricbeat-playbook.yml`
   
   The ready to use  and already modified Metricbeat playbook file can be found here:
-    - [metricbeat-playbook.yml](Playbooks/metricbeat-playbook.yml)
+   - [metricbeat-playbook.yml](Playbooks/metricbeat-playbook.yml)
 
     - `cat metricbeat-playbok.yml` to confirm the Ansible playbook for Metricbeat implements the following tasks: 
 
@@ -463,11 +463,11 @@ PLAY RECAP *********************************************************************
 10.1.0.10                   : ok=7    changed=5    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 ```
 
-<a-name="mbver"></a>
+<a name="mbver"></a>
 ### Verifying Metricbeat Installation and Playbook 
 
   1) Make sure that the ELK server container is up and running.
-    - On the workstation, navigate to http://52.249.189.192:5601/app/kibana/home. 
+   - On the workstation, navigate to http://52.249.189.192:5601/app/kibana/home. 
 
     - Note that if you do not see the ELK server landing page, open a terminal on your computer and SSH into the ELK server.
 
@@ -487,7 +487,7 @@ PLAY RECAP *********************************************************************
 
     - [Metricbeat_receiving.png](Images/Metricbeat_receiving.png)
 
-<a-name="ttkim"></a>
+<a name="ttkim"></a>
 ### Things to Keep in Mind
 - For Filebeat: 
   - The filebeat-configuration.yml has been modified to replace the IP address with the IP address of the ELK machine. 
@@ -526,7 +526,7 @@ PLAY RECAP *********************************************************************
   - See `Using the Playbook for Metricbeat` Step 10 for instructions on modifying metricbeat.yml
 
 
-<a-name="addresources"></a>
+<a name="addresources"></a>
 #### Additional Resources
 - [Ansible Documentation](https://docs.ansible.com/ansible/latest/modules/modules_by_category.html)
 - [`elk-docker` Container Documentation](https://elk-docker.readthedocs.io/)
