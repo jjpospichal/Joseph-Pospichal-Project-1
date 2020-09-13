@@ -3,20 +3,6 @@
 # Within Azure create a VNet of VMs for Ansible, Docker, DVWA & ELK
 ## Automated ELK Stack Deployment
 
-Table of Contents
-
-[TOC]
-[ Decription fo the Topology ] (#Description)
-[ Access Policies ] (#Access)
-[ Elk Configuration ] (#ELK)
-[ Target Machines & Beats ] (#Target)
-[ Using the Playbook for Filebeat ] (#UsingF)
-[ Verifying Filebeat Installation and Playbook ] (#VerifyF)
-[ Using the Playbook for Metricbeat ] (#UsingM)
-[ Verifying Metricbeat Installation and Playbook ] (#VerifyM)
-[ Things to Keep in Mind ] (#Things)
-[ Additional Resources ] (#Additional)
-
 The files in this repository were used to configure the network depicted below.
 
 - [Project 1 Network Diagram.png](Images/Project 1 Network Diagram.png)
@@ -35,7 +21,7 @@ This document contains the following details:
   - Machines Being Monitored
 - How to Use the Ansible Build
 
-### <a name="desc"></a>Description of the Topology
+### Description of the Topology
 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, also known as the D*mn Vulnerable Web Application.
 
@@ -84,7 +70,7 @@ A summary of the access policies in place can be found in the table below.
 | Web-3                | No                  | 10.1.0.4             |
 | ELK-VM               | Yes                 | Local IP             |
 
-<a name="elkconfig"></a>
+
 ### Elk Configuration
 
 Ansible automates the configuration of the ELK machine. No configuration was performed manually, which is advantageous because the configuration management is automated in Ansible.   Time consuming, repetive tasks are accomplished using standardized playbooks.
@@ -144,7 +130,6 @@ The following screenshot displays the result of running `docker ps` after succes
   - [docker_ps_output.png](Images/docker_ps_output.png)
 
 
-<a name="targetmch"></a>
 ### Target Machines & Beats
 This ELK server is configured to monitor the following virtual machines:
 
@@ -163,7 +148,7 @@ These Beats allow us to collect the following information from each machine:
 
   - Metricbeat: Like Filebeat, Metricbeat utilizes Elasticsearch, Logstash and Kilbana. Metricbeat captures Docker metrics, which would show the status and health of the Docker containers.  Metrics include: Docker containers, Number of Containers (and status: Running, Paused, Stopped), CPU usage, Memory usage and Network IO.
 
-<a name="usepbfb"></a>
+
 ### Using the Playbook for Filebeat
 
 These tasks are performed on the VMs that are specified within the Filebeat configuration file located within Ansible at /etc/ansible/files/filebeat-configuration.yml
@@ -301,7 +286,7 @@ PLAY RECAP *********************************************************************
 10.1.0.10                   : ok=7    changed=5    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 ```
 
-<a name="fbver"></a>
+
 ### Verifying Filebeat Installation and Playbook 
 
   1) Make sure that the ELK server container is up and running.
@@ -326,7 +311,7 @@ PLAY RECAP *********************************************************************
     - [Filebeat_receiving.png](Images/Filebeat_receiving.png)
 
 
-<a name="usepbfb"></a>
+
 ### Using the Playbook for Metricbeat
 
 These tasks are performed on the ELK server that is specified within the Metricbeat configuration file located within Ansible at /etc/ansible/files/metricbeat.yml
@@ -462,7 +447,7 @@ PLAY RECAP *********************************************************************
 10.1.0.10                   : ok=7    changed=5    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 ```
 
-<a name="mbver"></a>
+
 ### Verifying Metricbeat Installation and Playbook 
 
   1) Make sure that the ELK server container is up and running.
@@ -486,7 +471,7 @@ PLAY RECAP *********************************************************************
 
     - [Metricbeat_receiving.png](Images/Metricbeat_receiving.png)
 
-<a name="ttkim"></a>
+
 ### Things to Keep in Mind
 - For Filebeat: 
   - The filebeat-configuration.yml has been modified to replace the IP address with the IP address of the ELK machine. 
@@ -525,8 +510,7 @@ PLAY RECAP *********************************************************************
   - See `Using the Playbook for Metricbeat` Step 10 for instructions on modifying metricbeat.yml
 
 
-<a name="addresources"></a>
-#### Additional Resources
+### Additional Resources
 - [Ansible Documentation](https://docs.ansible.com/ansible/latest/modules/modules_by_category.html)
 - [`elk-docker` Container Documentation](https://elk-docker.readthedocs.io/)
 - [Elastic.co: The Elastic Stack](https://www.elastic.co/elastic-stack)
