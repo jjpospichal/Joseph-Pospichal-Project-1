@@ -368,26 +368,29 @@ setup.kibana:
 host: "10.2.0.4:5601"
 ```
   13) Save this file in  `/etc/ansible/files/metricbeat.yml`.
+   
   14) Create the `metricbeat-playbook.yml`
   
-  The ready to use  and already modified Metricbeat playbook file can be found here:
-   - [metricbeat-playbook.yml](Playbooks/metricbeat-playbook.yml)
+  The ready to use and already modified Metricbeat playbook file can be found here:
+  - [metricbeat-playbook.yml](Playbooks/metricbeat-playbook.yml)
 
-   - `cat metricbeat-playbok.yml` to confirm the Ansible playbook for Metricbeat implements the following tasks: 
+  - `cat metricbeat-playbok.yml` to confirm the Ansible playbook for Metricbeat implements the following tasks: 
 
-    a) Download the `.deb` file from [artifacts.elastic.co](https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-7.6.1-amd64.deb).
-    
+    a) Download the `.deb` file from [artifacts.elastic.co](https://artifacts.elastic.co/downloads/beats/metricbeat/filebeat-7.6.1-amd64.deb).
+
     b) Install the `.deb` file using the `dpkg` command shown below:
-      - `dpkg -i metricbeat-7.6.1-amd64.deb`
+    - `dpkg -i metricbeat-7.6.1-amd64.deb`
     
-    c) Place the configuration file in a directory called `metricbeat`.
+    c) Copy the Metricbeat configuration file from the Asible container to each of the WebVM's where Metricbeat has just been installed.
     
-    e) Run the `metricbeat modules enable docker` command.
+    d) Place the configuration file in a directory called `metricbeat`.
+    
+    e) Run the `metricbeat modules enable system` command.
     
     f) Run the `metricbeat setup` command.
     
-    g) Run the `service metricbeat start` command.
-  
+    g) Run the `service metricbeat start` command.  
+
   15) The Metricbeat playbook `metricbeat-playbook.yml`should be located in the `/etc/ansible/roles` directory
   16) Run the `ansible-playbook metricbeat-playbook.yml` command.
 
