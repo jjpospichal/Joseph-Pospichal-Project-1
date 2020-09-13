@@ -320,7 +320,7 @@ PLAY RECAP *********************************************************************
     - Click on the **DEB** tab under **Getting Started** to view the correct Linux Filebeat installation instructions.
     - Sroll to **Module Status** and click **Check Data**.
 
-4) If the ELK stack was successfully receiving logs, you would have seen: 
+4) If the ELK stack was successfully receiving logs, you would see: 
 
 - [Filebeat_receiving.png](Images/Filebeat_receiving.png)
 
@@ -390,14 +390,19 @@ host: "10.2.0.4:5601"
   The ready to use  and already modified Metricbeat playbook file can be found here:
   - [metricbeat-playbook.yml](Playbooks/metricbeat-playbook.yml)
 
-  `cat metricbeat-playbok.yml` to confirm the Ansible playbook for Metricbeat implements the following tasks: 
+  - `cat metricbeat-playbok.yml` to confirm the Ansible playbook for Metricbeat implements the following tasks: 
 
     a) Download the `.deb` file from [artifacts.elastic.co](https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-7.6.1-amd64.deb).
+    
     b) Install the `.deb` file using the `dpkg` command shown below:
     - `dpkg -i metricbeat-7.6.1-amd64.deb`
+    
     c) Place the configuration file in a directory called `metricbeat`.
+    
     e) Run the `metricbeat modules enable docker` command.
+    
     f) Run the `metricbeat setup` command.
+    
     g) Run the `service metricbeat start` command.
   
   15) The Metricbeat playbook `metricbeat-playbook.yml`should be located in the `/etc/ansible/roles` directory
@@ -479,7 +484,7 @@ PLAY RECAP *********************************************************************
     - Click on the **DEB** tab under **Getting Started** to view the correct Linux Metricbeat installation instructions.
     - Scroll to **Module Status** and click **Check Data**.
 
- - If the ELK stack was successfully receiving logs, you would have seen: 
+ - If the ELK stack was successfully receiving logs, you would see: 
 
 - [Metricbeat_receiving.png](Images/Metricbeat_receiving.png)
 
