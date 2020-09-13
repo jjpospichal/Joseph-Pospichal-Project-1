@@ -185,7 +185,7 @@ Follow these steps to install Filebeat:
   6) Run `docker container list -a` to verify that that the container is on.
   7) If it isn', run `docker start elk`
   8) Return to Ansible `exit`
-  9) The ready to use and already modified Filebeat playbook file can be found here:
+  9) The ready to use and already modified Filebeat configuration file can be found here:
   - [filebeat-configuration.yml](Playbooks/filebeat-configuration.yml)  
   
   - Or can be downloaded and modified:
@@ -351,7 +351,7 @@ Follow these steps to install Metricbeat:
   6) Run `docker container list -a` to verify that that the container is on.
   7) If it is not, run `docker start elk`
   8) Return to Ansible `exit`
-  9) The ready to use and already modified Filebeat playbook file can be found here:
+  9) The ready to use and already modified Metricbeat configuration file can be found here:
   - [metricbeat.yml](Playbooks/metricbeat.yml)  
   
   - Or can be downloaded and modified:
@@ -400,11 +400,11 @@ host: "10.2.0.4:5601"
     f) Run the `metricbeat setup` command.
     g) Run the `service metricbeat start` command.
   
-  15) The Filebeat playbook `metricbeat-playbook.yml`should be located in the `/etc/ansible/roles` directory
+  15) The Metricbeat playbook `metricbeat-playbook.yml`should be located in the `/etc/ansible/roles` directory
   16) Run the `ansible-playbook metricbeat-playbook.yml` command.
 
 
-``bash
+```bash
 root@be61a239baae:/etc/ansible# ansible-playbook metricbeat-playbook.yml
 
 PLAY [installing and launching Metricbeat] *******************************************************
@@ -457,7 +457,7 @@ PLAY RECAP *********************************************************************
 10.1.0.8                  : ok=7    changed=5    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 10.1.0.9                  : ok=7    changed=5    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 10.1.0.10                   : ok=7    changed=5    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
-
+```
 
 <a-name="mbver"></a>
 ### Verifying Metricbeat Installation and Playbook 
