@@ -190,7 +190,7 @@ Follow these steps to install Filebeat:
   9) The ready to use and already modified Filebeat configuration file can be found here:
     - [filebeat-configuration.yml](Playbooks/filebeat-configuration.yml)  
   
-    - Or can be downloaded and modified:
+  - Or can be downloaded and modified:
 
     Use `curl` to download a copy of the Filebeat configuration file:
     - `curl https://gist.githubusercontent.com/slape/5cc350109583af6cbe577bbcc0710c93/raw/eca603b72586fbe148c11f9c87bf96a63cb25760/Filebeat > /etc/ansible/files/filebeat-configuration.yml`
