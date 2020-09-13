@@ -292,11 +292,11 @@ PLAY RECAP *********************************************************************
   1) Make sure that the ELK server container is up and running.
    - On the workstation, navigate to http://52.249.189.192:5601/app/kibana/home. 
 
-    - Note that if you do not see the ELK server landing page, open a terminal on your computer and SSH into the ELK server.
+   - Note that if you do not see the ELK server landing page, open a terminal on your computer and SSH into the ELK server.
 
-    - Run `docker container list -a` to verify that the container is on.
+   - Run `docker container list -a` to verify that the container is on.
 
-    - If it is not, run `docker start elk`.
+   - If it is not, run `docker start elk`.
 
   2) Verify that the Filebeat playbook is completing the section `Using the Playbook for Filebeat`.
 
@@ -373,7 +373,7 @@ host: "10.2.0.4:5601"
   The ready to use  and already modified Metricbeat playbook file can be found here:
    - [metricbeat-playbook.yml](Playbooks/metricbeat-playbook.yml)
 
-    - `cat metricbeat-playbok.yml` to confirm the Ansible playbook for Metricbeat implements the following tasks: 
+   - `cat metricbeat-playbok.yml` to confirm the Ansible playbook for Metricbeat implements the following tasks: 
 
     a) Download the `.deb` file from [artifacts.elastic.co](https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-7.6.1-amd64.deb).
     
