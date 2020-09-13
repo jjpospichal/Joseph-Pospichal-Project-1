@@ -6,16 +6,16 @@
 Table of Contents
 
 [TOC]
-[ Decription fo the Topology ] (#desc)
-[ Access Policies ] (#access)
-[ Elk Configuration ] (#elkconfig)
-[ Target Machines & Beats ] (#targetmch)
-[ Using the Playbook for Filebeat ] (#usepbfb)
-[ Verifying Filebeat Installation and Playbook ] (#fbver)
-[ Using the Playbook for Metricbeat ] (#usepbmb)
-[ Verifying Metricbeat Installation and Playbook ] (#mbver)
-[ Things to Keep in Mind ] (#ttkim)
-[ Additional Resources ] (#addresources)
+[ Decription fo the Topology ] (#Description)
+[ Access Policies ] (#Access)
+[ Elk Configuration ] (#ELK)
+[ Target Machines & Beats ] (#Target)
+[ Using the Playbook for Filebeat ] (#UsingF)
+[ Verifying Filebeat Installation and Playbook ] (#VerifyF)
+[ Using the Playbook for Metricbeat ] (#UsingM)
+[ Verifying Metricbeat Installation and Playbook ] (#VerifyM)
+[ Things to Keep in Mind ] (#Things)
+[ Additional Resources ] (#Additional)
 
 The files in this repository were used to configure the network depicted below.
 
@@ -35,8 +35,7 @@ This document contains the following details:
   - Machines Being Monitored
 - How to Use the Ansible Build
 
-<a name="desc"></a>
-### Description of the Topology
+### <a name="desc"></a>Description of the Topology
 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, also known as the D*mn Vulnerable Web Application.
 
