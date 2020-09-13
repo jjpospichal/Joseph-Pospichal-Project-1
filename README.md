@@ -126,23 +126,23 @@ To run the ELK configuration:
 
   1) From a terminal ssh to the Jump-Box-Provisioner
   2) Start the Ansible container
-  - `sudo docker start [container name]`
+    - `sudo docker start [container name]`
   3) Attach to the Ansible container
-  - `sudo docker attach [container name]`
+    - `sudo docker attach [container name]`
   4) Change directories to: /etc/ansible
-  - `cd /etc/ansible`
+    - `cd /etc/ansible`
   5) The ELK playbook `install-elk.yml`should be located in the `/etc/ansible` directory
   3) Run the ELK playbook:  
-   - `ansible-playbook install-elk.yml`
+     - `ansible-playbook install-elk.yml`
 
 Once the configuration of the ELK instance is complete, ssh to the ELK VM.
-- `ssh [id]@10.2.0.4`
+  - `ssh [id]@10.2.0.4`
 Run the following command to ensure that the ELK install has been successful:
--   `sudo docker ps`
+  -   `sudo docker ps`
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance:
 
-- [docker_ps_output.png](Images/docker_ps_output.png)
+  - [docker_ps_output.png](Images/docker_ps_output.png)
 
 
 <a-name="targetmch"></a>
@@ -169,29 +169,31 @@ These Beats allow us to collect the following information from each machine:
 
 These tasks are performed on the VMs that are specified within the Filebeat configuration file located within Ansible at /etc/ansible/files/filebeat-configuration.yml
 
+These tasks are performed on the VMs that are specified within the Ansible `hosts` file.
+
 In order to use the playbook, you will need to have an Ansible control node already configured and running. Assuming you have such a control node provisioned: 
 
 Follow these steps to install Filebeat:
 
   1) From a terminal ssh to the Jump-Box-Provisioner
   2) Start the Ansible container
-  - `sudo docker start [container name]`
+    - `sudo docker start [container name]`
   3) Attach to the Ansible container
-  - `sudo docker attach [container name]`
+    - `sudo docker attach [container name]`
   4) Change directories to: /etc/ansible
-  - `cd /etc/ansible`
+    - `cd /etc/ansible`
   5) Make sure the the ELK server container is up and running, ssh to the ELK VM.
-  - `ssh [id]@10.2.0.4`
+    - `ssh [id]@10.2.0.4`
   6) Run `docker container list -a` to verify that that the container is on.
   7) If it isn', run `docker start elk`
   8) Return to Ansible `exit`
   9) The ready to use and already modified Filebeat configuration file can be found here:
-  - [filebeat-configuration.yml](Playbooks/filebeat-configuration.yml)  
+    - [filebeat-configuration.yml](Playbooks/filebeat-configuration.yml)  
   
-  - Or can be downloaded and modified:
+    - Or can be downloaded and modified:
 
-  Use `curl` to download a copy of the Filebeat configuration file:
-  - `curl https://gist.githubusercontent.com/slape/5cc350109583af6cbe577bbcc0710c93/raw/eca603b72586fbe148c11f9c87bf96a63cb25760/Filebeat > /etc/ansible/files/filebeat-configuration.yml`
+    Use `curl` to download a copy of the Filebeat configuration file:
+    - `curl https://gist.githubusercontent.com/slape/5cc350109583af6cbe577bbcc0710c93/raw/eca603b72586fbe148c11f9c87bf96a63cb25760/Filebeat > /etc/ansible/files/filebeat-configuration.yml`
  
 
  ```bash
@@ -202,7 +204,7 @@ root@be61a239baae:/etc/ansible# curl https://gist.githubusercontent.com/slape/5c
  ```
 
   10) Edit the configuration file for VM specifics:
-  -  `nano filebeat-configuration.yml`
+    -  `nano filebeat-configuration.yml`
   11) Scroll to line #1106 and replace the IP address with the IP address of the ELK machine.
 
 ```bash
@@ -303,26 +305,26 @@ PLAY RECAP *********************************************************************
 <a-name="fbver"></a>
 ### Verifying Filebeat Installation and Playbook 
 
-1) Make sure that the ELK server container is up and running.
-- On the workstation, navigate to http://52.249.189.192:5601/app/kibana/home. 
+  1) Make sure that the ELK server container is up and running.
+    - On the workstation, navigate to http://52.249.189.192:5601/app/kibana/home. 
 
-- Note that if you do not see the ELK server landing page, open a terminal on your computer and SSH into the ELK server.
+    - Note that if you do not see the ELK server landing page, open a terminal on your computer and SSH into the ELK server.
 
-  - Run `docker container list -a` to verify that the container is on.
+    - Run `docker container list -a` to verify that the container is on.
 
-  - If it is not, run `docker start elk`.
+    - If it is not, run `docker start elk`.
 
-2) Verify that the Filebeat playbook is completing the section `Using the Playbook for Filebeat`.
+  2) Verify that the Filebeat playbook is completing the section `Using the Playbook for Filebeat`.
 
-3) Open the ELK server homepage.
+  3) Open the ELK server homepage.
     - Click on **Add Log Data**.
     - Choose **System Logs**.
     - Click on the **DEB** tab under **Getting Started** to view the correct Linux Filebeat installation instructions.
     - Sroll to **Module Status** and click **Check Data**.
 
-4) If the ELK stack was successfully receiving logs, you would see: 
+  4) If the ELK stack was successfully receiving logs, you would see: 
 
-- [Filebeat_receiving.png](Images/Filebeat_receiving.png)
+    - [Filebeat_receiving.png](Images/Filebeat_receiving.png)
 
 
 <a-name="usepbfb"></a>
@@ -332,27 +334,24 @@ These tasks are performed on the ELK server that is specified within the Metricb
 
 These tasks are performed on the VMs that are specified within the Ansible `hosts` file.
 
-The modified Metricbeat configuration file can be found here:
- - [metricbeat.yml](Playbooks/metricbeat.yml)
-
 In order to use the playbook, you will need to have an Ansible control node already configured and running. Assuming you have such a control node provisioned: 
 
 Follow these steps to install Metricbeat:
 
   1) From a terminal ssh to the Jump-Box-Provisioner
   2) Start the Ansible container
-  - `sudo docker start [container name]`
+    - `sudo docker start [container name]`
   3) Attach to the Ansible container
-  - `sudo docker attach [container name]`
+    - `sudo docker attach [container name]`
   4) Change directories to: /etc/ansible
-  - `cd /etc/ansible`
+    - `cd /etc/ansible`
   5) Make sure the the ELK server container is up and running, ssh to the ELK VM.
-  - `ssh [id]@10.2.0.4`
+    - `ssh [id]@10.2.0.4`
   6) Run `docker container list -a` to verify that that the container is on.
   7) If it is not, run `docker start elk`
   8) Return to Ansible `exit`
   9) The ready to use and already modified Metricbeat configuration file can be found here:
-  - [metricbeat.yml](Playbooks/metricbeat.yml)  
+    - [metricbeat.yml](Playbooks/metricbeat.yml)  
   
   - Or can be downloaded and modified:
   
@@ -368,7 +367,7 @@ root@be61a239baae:/etc/ansible# curl https://gist.githubusercontent.com/slape/58
  ```
 
   10) Edit the configuration file for VM specifics:
-  -  `nano metricbeat.yml`
+    -  `nano metricbeat.yml`
   11) Scroll to `Elasticsearch output` and replace the IP address with the IP address of the ELK machine.
 
 ```bash
@@ -388,14 +387,14 @@ host: "10.2.0.4:5601"
   14) Create the `metricbeat-playbook.yml`
   
   The ready to use  and already modified Metricbeat playbook file can be found here:
-  - [metricbeat-playbook.yml](Playbooks/metricbeat-playbook.yml)
+    - [metricbeat-playbook.yml](Playbooks/metricbeat-playbook.yml)
 
-  - `cat metricbeat-playbok.yml` to confirm the Ansible playbook for Metricbeat implements the following tasks: 
+    - `cat metricbeat-playbok.yml` to confirm the Ansible playbook for Metricbeat implements the following tasks: 
 
     a) Download the `.deb` file from [artifacts.elastic.co](https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-7.6.1-amd64.deb).
     
     b) Install the `.deb` file using the `dpkg` command shown below:
-    - `dpkg -i metricbeat-7.6.1-amd64.deb`
+      - `dpkg -i metricbeat-7.6.1-amd64.deb`
     
     c) Place the configuration file in a directory called `metricbeat`.
     
@@ -467,26 +466,26 @@ PLAY RECAP *********************************************************************
 <a-name="mbver"></a>
 ### Verifying Metricbeat Installation and Playbook 
 
-1) Make sure that the ELK server container is up and running.
-- On the workstation, navigate to http://52.249.189.192:5601/app/kibana/home. 
+  1) Make sure that the ELK server container is up and running.
+    - On the workstation, navigate to http://52.249.189.192:5601/app/kibana/home. 
 
-- Note that if you do not see the ELK server landing page, open a terminal on your computer and SSH into the ELK server.
+    - Note that if you do not see the ELK server landing page, open a terminal on your computer and SSH into the ELK server.
 
-  - Run `docker container list -a` to verify that the container is on.
+    - Run `docker container list -a` to verify that the container is on.
 
-  - If it is not, run `docker start elk`.
+    - If it is not, run `docker start elk`.
 
-2) Verify that the Metricbeat playbook is completing the section `Using the Playbook for Metricbeat`.
+  2) Verify that the Metricbeat playbook is completing the section `Using the Playbook for Metricbeat`.
 
-3) Open the ELK server homepage.
+  3) Open the ELK server homepage.
     - Click on **Add Metric Data**.
     - Choose **Docker Metrics**.
     - Click on the **DEB** tab under **Getting Started** to view the correct Linux Metricbeat installation instructions.
     - Scroll to **Module Status** and click **Check Data**.
 
- - If the ELK stack was successfully receiving logs, you would see: 
+    - If the ELK stack was successfully receiving logs, you would see: 
 
-- [Metricbeat_receiving.png](Images/Metricbeat_receiving.png)
+    - [Metricbeat_receiving.png](Images/Metricbeat_receiving.png)
 
 <a-name="ttkim"></a>
 ### Things to Keep in Mind
@@ -500,7 +499,7 @@ PLAY RECAP *********************************************************************
 - For Metricbeat: 
   metricbeat.yml is the configuration file and is copied to /etc/metricbeat/metricbeat.yml on the VM
   metricbeat-playbook.yml is the playbook file and is not copied to the VM
-    - The metricbeat-yml has been modified to replace the IP address with the IP address of the ELK machine under `setup.kibana`, and `output.elasticsearch`.
+  - The metricbeat-yml has been modified to replace the IP address with the IP address of the ELK machine under `setup.kibana`, and `output.elasticsearch`.
   - metricbeat.yml is the configuration file and is copied to /etc/metricbeat/metricbeat.yml on the VM
   - metricbeat-playbook.yml is the playbook file and is not copied to the VM
   - The metricbeat-playbook.yml will install and launch Metricbeat, download Metricbeat .deb file, install Metricbeat .deb, copy the Metricbeat configuration file, enable and configure the system module, setup Metricbeat, and start the Metricbeat service
@@ -510,11 +509,11 @@ PLAY RECAP *********************************************************************
 - The `hosts` file is where the IPs of the `webservers` (where Filebeat and Metricbeat will be installed) and `elkservers` (where ELK will be installed) are defined.
 
 - To check that the ELK server is running, navigate to http://52.249.189.192:5601/app/kibana/home
-    - Click on **Add Metric Data**.
-    - Choose **Docker Metrics**.
-    - Click on the **DEB** tab under **Getting Started** to view the correct Linux Metricbeat installation instructions.
-    - Scroll to **Module Status** and click **Check Data**.
-    - If successful, message will display `Data succesfully received from this module`
+  - Click on **Add Metric Data**.
+  - Choose **Docker Metrics**.
+  - Click on the **DEB** tab under **Getting Started** to view the correct Linux Metricbeat installation instructions.
+  - Scroll to **Module Status** and click **Check Data**.
+  - If successful, message will display `Data succesfully received from this module`
   
 - To download files:
 
