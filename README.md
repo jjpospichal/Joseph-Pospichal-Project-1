@@ -227,12 +227,18 @@ host: "10.2.0.4:5601"
   - `cat filebeat-playbok.yml` to confirm the Ansible playbook for Filebeat implements the following tasks: 
 
     a) Download the `.deb` file from [artifacts.elastic.co](https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.4.0-amd64.deb).
+
     b) Install the `.deb` file using the `dpkg` command shown below:
     - `dpkg -i filebeat-7.4.0-amd64.deb`
+    
     c) Copy the Filebeat configuration file from the Ansible container to each of the WebVM's where Filebeat has just been installed.
+    
     d) Place the configuration file in a directory called `filebeat`.
+    
     e) Run the `filebeat modules enable system` command.
+    
     f) Run the `filebeat setup` command.
+    
     g) Run the `service filebeat start` command.  
   
   15) The Filebeat playbook `filebeat-playbook.yml`should be located in the `/etc/ansible/roles` directory
@@ -292,6 +298,7 @@ PLAY RECAP *********************************************************************
 10.1.0.8                  : ok=7    changed=5    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 10.1.0.9                  : ok=7    changed=5    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 10.1.0.10                   : ok=7    changed=5    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+```
 
 <a-name="fbver"></a>
 ### Verifying Filebeat Installation and Playbook 
