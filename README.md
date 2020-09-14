@@ -6,7 +6,7 @@
 The files in this repository were used to configure the network depicted below.
 
 
-![Project_1_Network_Diagram.png](Images/Project_1_Network_Diagram.png)
+![Project_1_Network_Diagram.png](Diagrams/Project_1_Network_Diagram.png)
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above or a portion. Alternatively, select portions of the playbook file may be used to install only certain pieces of it, such as Filebeat.
 
@@ -86,11 +86,11 @@ The Ansible playbook for ELK implements the following tasks:
   - Enable the docker service to start on boot
 
 The ELK configuration file can be found here:
- - [install-elk.yml](Playbooks/install-elk.yml)
+ - [install-elk.yml](Ansible/install-elk.yml)
 
 The Ansible `hosts` file contains the configuration for the VNet webservers and elkservers.
 The Ansible configuration file can be found here:
-- [hosts](Playbooks/hosts)
+- [hosts](Ansible/hosts)
 
 The `hosts` file should already have the following changes made:
 
@@ -128,7 +128,7 @@ Run the following command to ensure that the ELK install has been successful:
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance:
 
-![docker_ps_output.png](Images/docker_ps_output.png)
+![docker_ps_output.png](Diagrams/docker_ps_output.png)
 
 
 ### Target Machines & Beats
@@ -173,7 +173,7 @@ Follow these steps to install Filebeat:
   7) If it isn', run `docker start elk`
   8) Return to Ansible `exit`
   9) The ready to use and already modified Filebeat configuration file can be found here:
-    - [filebeat-configuration.yml](Playbooks/filebeat-configuration.yml)  
+    - [filebeat-configuration.yml](Ansible/filebeat-configuration.yml)  
   
   - Or can be downloaded and modified:
 
@@ -209,7 +209,7 @@ host: "10.2.0.4:5601"
   14) Create the `filebeat-playbook.yml`
   
   The ready to use and already modified Filebeat playbook file can be found here:
-  - [filebeat-playbook.yml](Playbooks/filebeat-playbook.yml)
+  - [filebeat-playbook.yml](Ansible/filebeat-playbook.yml)
 
   - `cat filebeat-playbok.yml` to confirm the Ansible playbook for Filebeat implements the following tasks: 
 
@@ -309,7 +309,7 @@ PLAY RECAP *********************************************************************
 
   4) If the ELK stack was successfully receiving logs, you would see: 
 
-![Filebeat_receiving.png](Images/Filebeat_receiving.png)
+![Filebeat_receiving.png](Diagrams/Filebeat_receiving.png)
 
 
 
@@ -336,7 +336,7 @@ Follow these steps to install Metricbeat:
   7) If it is not, run `docker start elk`
   8) Return to Ansible `exit`
   9) The ready to use and already modified Metricbeat configuration file can be found here:
-    - [metricbeat.yml](Playbooks/metricbeat.yml)  
+    - [metricbeat.yml](Ansible/metricbeat.yml)  
   
   - Or can be downloaded and modified:
   
@@ -373,7 +373,7 @@ host: "10.2.0.4:5601"
   14) Create the `metricbeat-playbook.yml`
   
   The ready to use and already modified Metricbeat playbook file can be found here:
-  - [metricbeat-playbook.yml](Playbooks/metricbeat-playbook.yml)
+  - [metricbeat-playbook.yml](Ansible/metricbeat-playbook.yml)
 
   - `cat metricbeat-playbok.yml` to confirm the Ansible playbook for Metricbeat implements the following tasks: 
 
@@ -473,7 +473,7 @@ PLAY RECAP *********************************************************************
 
   - If the ELK stack was successfully receiving logs, you would see: 
 
-![Metricbeat_receiving.png](Images/Metricbeat_receiving.png)
+![Metricbeat_receiving.png](Diagrams/Metricbeat_receiving.png)
 
 
 ### Things to Keep in Mind
