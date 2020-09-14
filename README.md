@@ -5,7 +5,8 @@
 
 The files in this repository were used to configure the network depicted below.
 
-- [Project 1 Network Diagram.png](https://github.com/jjpospichal/Joseph-Pospichal-Project-1/Images/Project 1 Network Diagram.png)
+
+![Project_1_Network_Diagram.png](Images/Project_1_Network_Diagram.png)
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above or a portion. Alternatively, select portions of the playbook file may be used to install only certain pieces of it, such as Filebeat.
 
@@ -127,7 +128,7 @@ Run the following command to ensure that the ELK install has been successful:
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance:
 
-  - [docker_ps_output.png](https://github.com/jjpospichal/Joseph-Pospichal-Project-1/Images/docker_ps_output.png)
+![docker_ps_output.png](Images/docker_ps_output.png)
 
 
 ### Target Machines & Beats
@@ -308,7 +309,7 @@ PLAY RECAP *********************************************************************
 
   4) If the ELK stack was successfully receiving logs, you would see: 
 
-    - [Filebeat_receiving.png](https://github.com/jjpospichal/Joseph-Pospichal-Project-1/Images/Filebeat_receiving.png)
+![Filebeat_receiving.png](Images/Filebeat_receiving.png)
 
 
 
@@ -472,7 +473,7 @@ PLAY RECAP *********************************************************************
 
   - If the ELK stack was successfully receiving logs, you would see: 
 
-   - [Metricbeat_receiving.png](https://github.com/jjpospichal/Joseph-Pospichal-Project-1/Images/Metricbeat_receiving.png)
+![Metricbeat_receiving.png](Images/Metricbeat_receiving.png)
 
 
 ### Things to Keep in Mind
