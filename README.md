@@ -5,7 +5,7 @@
 
 The files in this repository were used to configure the network depicted below.
 
-- [Project 1 Network Diagram.png](Images/Project 1 Network Diagram.png)
+- [Project 1 Network Diagram.png](Joseph-Pospichal-Project-1/Images/Project 1 Network Diagram.png)
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above or a portion. Alternatively, select portions of the playbook file may be used to install only certain pieces of it, such as Filebeat.
 
@@ -48,7 +48,7 @@ The configuration details of each machine may be found below:
 | Web-3                | DVWA     | 10.1.0.10  | Linux (Ubuntu 18.04) |
 | ELK-VM               | ELK      | 10.0.2.4   | Linux (Ubuntu 18.04) |
 
-<a name="access"></a>
+
 ### Access Policies
 
 The machines on the internal network are not exposed to the public Internet. 
@@ -127,7 +127,7 @@ Run the following command to ensure that the ELK install has been successful:
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance:
 
-  - [docker_ps_output.png](Images/docker_ps_output.png)
+  - [docker_ps_output.png](Joseph-Pospichal-Project-1/Images/docker_ps_output.png)
 
 
 ### Target Machines & Beats
@@ -303,12 +303,12 @@ PLAY RECAP *********************************************************************
   3) Open the ELK server homepage.
     - Click on **Add Log Data**.
     - Choose **System Logs**.
-    - Click on the **DEB** tab under **Getting Started** to view the correct Linux Filebeat installation instructions.
+0    - Click on the **DEB** tab under **Getting Started** to view the correct Linux Filebeat installation instructions.
     - Sroll to **Module Status** and click **Check Data**.
 
   4) If the ELK stack was successfully receiving logs, you would see: 
 
-    - [Filebeat_receiving.png](Images/Filebeat_receiving.png)
+    - [Filebeat_receiving.png](Joseph-Pospichal-Project-1/Images/Filebeat_receiving.png)
 
 
 
@@ -472,7 +472,7 @@ PLAY RECAP *********************************************************************
 
   - If the ELK stack was successfully receiving logs, you would see: 
 
-   - [Metricbeat_receiving.png](Images/Metricbeat_receiving.png)
+   - [Metricbeat_receiving.png](Joseph-Pospichal-Project-1/Images/Metricbeat_receiving.png)
 
 
 ### Things to Keep in Mind
