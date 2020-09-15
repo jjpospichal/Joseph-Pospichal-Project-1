@@ -478,19 +478,19 @@ PLAY RECAP *********************************************************************
 
 ### Things to Keep in Mind
 - For Filebeat: 
-  - The filebeat-configuration.yml has been modified to replace the IP address with the IP address of the ELK machine. 
+  - The filebeat-configuration.yml has been modified to replace the default IP address with the IP address of the ELK machine which can be found in the section `Using the Playbook for Metricbeat` steps 11 and 12. 
   - fil.ebeat-configuration.yml is the configuration file and is copied to /etc/filebeat/filebeat.yml on the VM
   - filebeat-playbook.yml is the playbook file and is not copied to the VM
-  - The filebeat-playbook.yml will install and launch Filebeat, download Filebeat, install Filebeat .deb, copy the Filebeat configuration file, enable and configure the system module, setup Filebeat, and start the Filebeat service
+  - The playbook filebeat-playbook.yml will install and launch Filebeat, download Filebeat, install Filebeat .deb, copy the Filebeat configuration file, enable and configure the system module, setup Filebeat, and start the Filebeat service
   - After running the playbook, navigate to each WebVM to check that the installation worked as expected. 
 
 - For Metricbeat: 
   metricbeat.yml is the configuration file and is copied to /etc/metricbeat/metricbeat.yml on the VM
   metricbeat-playbook.yml is the playbook file and is not copied to the VM
-  - The metricbeat-yml has been modified to replace the IP address with the IP address of the ELK machine under `setup.kibana`, and `output.elasticsearch`.
+  - The metricbeat-yml has been modified to replace the default IP address with the IP address of the ELK machine which can be found in the section `Using the Playbook for Metricbeat` step 11.
   - metricbeat.yml is the configuration file and is copied to /etc/metricbeat/metricbeat.yml on the VM
   - metricbeat-playbook.yml is the playbook file and is not copied to the VM
-  - The metricbeat-playbook.yml will install and launch Metricbeat, download Metricbeat .deb file, install Metricbeat .deb, copy the Metricbeat configuration file, enable and configure the system module, setup Metricbeat, and start the Metricbeat service
+  - The playbook metricbeat-playbook.yml will install and launch Metricbeat, download Metricbeat .deb file, install Metricbeat .deb, copy the Metricbeat configuration file, enable and configure the system module, setup Metricbeat, and start the Metricbeat service
   - After running the playbook, navigate to each WebVM to check that the installation worked as expected.
 
 
