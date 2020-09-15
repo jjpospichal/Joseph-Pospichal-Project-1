@@ -291,7 +291,7 @@ PLAY RECAP *********************************************************************
 ### Verifying Filebeat Installation and Playbook 
 
   1) Make sure that the ELK server container is up and running.
-   - On the workstation, navigate to http://52.249.189.192:5601/app/kibana/home. 
+   - On the workstation, navigate to ELK server homepage http://52.249.189.192:5601/app/kibana/home. 
 
    - Note that if you do not see the ELK server landing page, open a terminal on your computer and SSH into the ELK server.
 
@@ -455,7 +455,7 @@ PLAY RECAP *********************************************************************
 ### Verifying Metricbeat Installation and Playbook 
 
   1) Make sure that the ELK server container is up and running.
-   - On the workstation, navigate to http://52.249.189.192:5601/app/kibana/home. 
+   - On the workstation, navigate to ELK server homepage http://52.249.189.192:5601/app/kibana/home. 
 
    - Note that if you do not see the ELK server landing page, open a terminal on your computer and SSH into the ELK server.
 
